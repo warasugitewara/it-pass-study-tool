@@ -7,13 +7,15 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QRadioButton,
     QButtonGroup, QProgressBar, QSpinBox, QComboBox, QMessageBox, QDialog
 )
-from PyQt6.QtCore import Qt, pyqtSignal, QTimer
+from PyQt6.QtCore import Qt, pyqtSignal, QTimer, QTime
 from PyQt6.QtGui import QFont
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_CORRECT, COLOR_INCORRECT, COLOR_TEXT_PRIMARY,
     COLOR_TEXT_SECONDARY, COLOR_ACCENT, PADDING_MEDIUM
 )
+from src.core import get_quiz_engine, QuizMode
+from src.ui.quiz_config_dialog import QuizConfigDialog
 
 
 class QuizWidget(QWidget):
@@ -23,11 +25,10 @@ class QuizWidget(QWidget):
     
     def __init__(self):
         super().__init__()
-        self.current_question_index = 0
-        self.questions = []
-        self.user_answers = {}
-        self.quiz_mode = None
+        self.engine = get_quiz_engine()
+        self.config_dialog = None
         self.elapsed_time = 0
+        self.current_question_start_time = None
         
         self._setup_ui()
         self._setup_timer()
@@ -119,96 +120,111 @@ class QuizWidget(QWidget):
         self.timer_label.setText(f"⏱️ {minutes:02d}:{seconds:02d}")
     
     def initialize(self, mode: str, num_questions: int = 10):
-        """クイズ初期化"""
-        self.quiz_mode = mode
-        self.current_question_index = 0
-        self.user_answers = {}
-        self.elapsed_time = 0
-        self.questions = self._get_questions(mode, num_questions)
-        
-        if not self.questions:
-            QMessageBox.warning(self, "エラー", "出題対象の問題がありません。\nまず問題を登録してください。")
-            self.back_requested.emit()
-            return
-        
-        self.timer.start(1000)
-        self._display_question()
+        """クイズ初期化（設定ダイアログを表示）"""
+        self.config_dialog = QuizConfigDialog(self)
+        self.config_dialog.quiz_started.connect(self._start_quiz_with_config)
+        self.config_dialog.exec()
     
-    def _get_questions(self, mode: str, num_questions: int) -> list:
-        """出題モードに応じた問題取得"""
-        # TODO: データベースから問題を取得する実装
-        # 現在はダミーデータ
-        return []
+    def _start_quiz_with_config(self, mode: str, config: dict):
+        """設定に基づいてクイズ開始"""
+        try:
+            mode_enum = QuizMode(mode)
+            session_id, questions = self.engine.start_session(
+                mode=mode_enum,
+                question_count=config.get('question_count', 10),
+                category_ids=config.get('category_ids', None),
+                year_ids=config.get('year_ids', None)
+            )
+            
+            if not questions:
+                QMessageBox.warning(self, "エラー", "出題対象の問題がありません。\nまず問題を登録してください。")
+                self.back_requested.emit()
+                return
+            
+            self.elapsed_time = 0
+            self.timer.start(1000)
+            self._display_question()
+        
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"クイズ開始に失敗しました:\n{e}")
+            self.back_requested.emit()
     
     def _display_question(self):
         """現在の問題を表示"""
-        if not self.questions:
+        question = self.engine.get_current_question()
+        if not question:
+            self._show_results()
             return
         
-        question = self.questions[self.current_question_index]
-        
         # 進捗表示更新
-        total = len(self.questions)
-        current = self.current_question_index + 1
+        current = self.engine.get_current_index() + 1
+        total = self.engine.get_question_count()
         self.progress_label.setText(f"問題 {current} / {total}")
         self.progress_bar.setValue(int((current / total) * 100))
         
         # 問題文表示
-        self.question_label.setText(question.get("text", "問題読み込みエラー"))
+        self.question_label.setText(question.text)
         
         # 選択肢表示・リセット
-        choices = question.get("choices", [])
-        for i, button in enumerate(self.choice_buttons):
-            if i < len(choices):
-                button.setText(f"{chr(65+i)}. {choices[i]}")  # A, B, C, D
-                button.show()
-            else:
-                button.hide()
+        for i, choice in enumerate(question.choices):
+            self.choice_buttons[i].setText(f"{chr(65+i)}. {choice.text}")
+            self.choice_buttons[i].show()
         
         self.choices_group.setExclusive(False)
         for button in self.choice_buttons:
             button.setChecked(False)
         self.choices_group.setExclusive(True)
         
-        # 前回の回答を復元
-        if self.current_question_index in self.user_answers:
-            self.choice_buttons[self.user_answers[self.current_question_index]].setChecked(True)
-        
         # ボタンテキスト更新
-        if self.current_question_index == len(self.questions) - 1:
+        if current == total:
             self.btn_next.setText("完了 ✓")
         else:
             self.btn_next.setText("次へ ▶")
     
-    def _save_current_answer(self):
-        """現在の回答を保存"""
-        selected_id = self.choices_group.checkedId()
-        if selected_id != -1:
-            self.user_answers[self.current_question_index] = selected_id
-    
     def _next_question(self):
         """次の問題へ"""
-        self._save_current_answer()
+        # 回答を記録
+        selected_id = self.choices_group.checkedId()
+        if selected_id != -1:
+            question = self.engine.get_current_question()
+            choice = question.choices[selected_id]
+            self.engine.submit_answer(choice.id, 0)
         
-        if self.current_question_index == len(self.questions) - 1:
+        # 次の問題へ
+        if self.engine.get_current_index() == self.engine.get_question_count() - 1:
             self._show_results()
             return
         
-        self.current_question_index += 1
+        self.engine.next_question()
         self._display_question()
     
     def _previous_question(self):
         """前の問題へ"""
-        if self.current_question_index > 0:
-            self._save_current_answer()
-            self.current_question_index -= 1
+        if self.engine.previous_question():
             self._display_question()
     
     def _show_results(self):
         """結果表示"""
         self.timer.stop()
-        # TODO: 結果画面実装
-        QMessageBox.information(self, "クイズ完了", "クイズを完了しました！")
+        
+        results = self.engine.finish_session()
+        
+        if results:
+            correct_rate = results.get('correct_rate', 0)
+            message = (
+                f"クイズ完了！\n\n"
+                f"正答数: {results.get('correct_count')}/{results.get('total_questions')}問\n"
+                f"正答率: {correct_rate:.1f}%\n"
+                f"学習時間: {results.get('elapsed_time', 0)}秒"
+            )
+            
+            if correct_rate >= 70:
+                QMessageBox.information(self, "✓ 良好です！", message)
+            elif correct_rate >= 50:
+                QMessageBox.information(self, "👍 お疲れ様でした", message)
+            else:
+                QMessageBox.information(self, "📚 もう一度チャレンジ", message)
+        
         self.back_requested.emit()
     
     def _confirm_back(self):
