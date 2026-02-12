@@ -259,7 +259,7 @@ ITPassStudyTool-1.0.0-installer.exe
 ## 📈 バージョン情報
 
 **最新バージョン**: 1.0.0  
-**リリース日**: 2024年  
+**リリース日**: 2026/2/16  
 **Python**: 3.11+
 
 詳細は [version.txt](version.txt) と [release_notes.md](release_notes.md) を参照。
