@@ -127,12 +127,25 @@ class AdminPanel(QWidget):
             "以下の形式でデータをインポートできます:\n"
             "• CSV ファイル\n"
             "• JSON ファイル\n"
-            "• Excel ファイル"
+            "• Excel ファイル\n"
+            "• Webスクレイピング"
         )
         desc.setStyleSheet(f"color: {COLOR_TEXT_SECONDARY};")
         layout.addWidget(desc)
         
         layout.addSpacing(15)
+        
+        # スクレイピングボタン
+        btn_scrape = QPushButton("🌐 Webからスクレイピング")
+        btn_scrape.clicked.connect(self._scrape_from_web)
+        layout.addWidget(btn_scrape)
+        
+        # サンプルデータロードボタン
+        btn_sample = QPushButton("📦 サンプルデータをロード")
+        btn_sample.clicked.connect(self._load_sample_data)
+        layout.addWidget(btn_sample)
+        
+        layout.addSpacing(10)
         
         # ファイル選択ボタン
         btn_csv = QPushButton("📂 CSVファイルをインポート")
@@ -148,6 +161,32 @@ class AdminPanel(QWidget):
         layout.addWidget(btn_excel)
         
         layout.addSpacing(15)
+        
+        # ステータス表示
+        self.status_label = QLabel("準備完了")
+        self.status_label.setStyleSheet(f"color: {COLOR_TEXT_SECONDARY}; font-size: 11px;")
+        layout.addWidget(self.status_label)
+        
+        layout.addSpacing(15)
+        
+        # サンプルフォーマット
+        group = QGroupBox("CSVフォーマット例")
+        group_layout = QVBoxLayout()
+        sample = QTextEdit()
+        sample.setReadOnly(True)
+        sample.setText(
+            "year,season,category,question_number,text,choice_a,choice_b,choice_c,choice_d,correct_answer\n"
+            "2024,春,ストラテジ,1,\"問題文...\",\"選択肢A\",\"選択肢B\",\"選択肢C\",\"選択肢D\",1"
+        )
+        sample.setMaximumHeight(100)
+        group_layout.addWidget(sample)
+        group.setLayout(group_layout)
+        layout.addWidget(group)
+        
+        layout.addStretch()
+        
+        widget.setLayout(layout)
+        return widget
         
         # サンプルフォーマット
         group = QGroupBox("CSVフォーマット例")
@@ -760,7 +799,116 @@ class AdminPanel(QWidget):
         except Exception as e:
             QMessageBox.critical(self, "エラー", f"時刻変更エラー: {e}")
             logger.error(f"時刻変更エラー: {e}")
-
+    
+    def _scrape_from_web(self):
+        """Webからスクレイピング実行"""
+        try:
+            reply = QMessageBox.question(
+                self,
+                "確認",
+                "WebからITパスポート過去問をスクレイピングします。\n\n"
+                "注意: サイトの構造によってはデータ取得に失敗する可能性があります。\n"
+                "ネットワーク接続を確認してから実行してください。",
+                QMessageBox.Yes | QMessageBox.No
+            )
+            
+            if reply != QMessageBox.Yes:
+                return
+            
+            self.status_label.setText("スクレイピング実行中...")
+            self._add_log("⏳ Webからスクレイピングを開始します...")
+            
+            from src.utils.scraper import ITPassScraper
+            
+            scraper = ITPassScraper(self.data_manager)
+            stats = scraper.bulk_scrape_and_update()
+            
+            self._add_log(f"✅ スクレイピング完了:")
+            self._add_log(f"   取得件数: {stats['fetched']}")
+            self._add_log(f"   追加件数: {stats['added']}")
+            self._add_log(f"   重複: {stats['duplicated']}")
+            self._add_log(f"   エラー: {stats['errors']}")
+            
+            self.status_label.setText(f"最終更新: {stats['end_time'].strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            if stats['added'] > 0:
+                QMessageBox.information(
+                    self,
+                    "成功",
+                    f"{stats['added']}件の新しい問題をデータベースに追加しました。"
+                )
+                self._load_initial_data()
+                self._apply_filters()
+            elif stats['fetched'] > 0:
+                QMessageBox.information(
+                    self,
+                    "完了",
+                    f"{stats['fetched']}件の問題を取得しましたが、重複のため追加されませんでした。"
+                )
+            else:
+                QMessageBox.warning(
+                    self,
+                    "警告",
+                    "問題を取得できませんでした。\nサイトの構造が変わっている可能性があります。"
+                )
+        
+        except ImportError:
+            QMessageBox.warning(
+                self,
+                "ライブラリが見つかりません",
+                "beautifulsoup4やrequestsライブラリが必要です。\n"
+                "pip install beautifulsoup4 requests を実行してください。"
+            )
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"スクレイピング中にエラーが発生しました:\n{str(e)}")
+            self._add_log(f"❌ エラー: {str(e)}")
+            self.status_label.setText("エラー: スクレイピング失敗")
+    
+    def _load_sample_data(self):
+        """サンプルデータをロード"""
+        try:
+            reply = QMessageBox.question(
+                self,
+                "確認",
+                "サンプルデータ (2024年春 5問) をデータベースにロードしますか?\n\n"
+                "既に同じデータがある場合は重複として扱われます。",
+                QMessageBox.Yes | QMessageBox.No
+            )
+            
+            if reply != QMessageBox.Yes:
+                return
+            
+            sample_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_spring.json"
+            
+            if not sample_file.exists():
+                QMessageBox.warning(self, "エラー", f"サンプルデータが見つかりません:\n{sample_file}")
+                return
+            
+            self.status_label.setText("サンプルデータをロード中...")
+            self._add_log("⏳ サンプルデータをロードしています...")
+            
+            with open(sample_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            questions = data.get('questions', [])
+            count = self.data_manager.bulk_add_questions(questions)
+            
+            self.status_label.setText(f"最終更新: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            self._add_log(f"✅ サンプルデータをロードしました: {count}件追加")
+            
+            QMessageBox.information(
+                self,
+                "成功",
+                f"{count}/{len(questions)}件のサンプル問題を追加しました。"
+            )
+            
+            self._load_initial_data()
+            self._apply_filters()
+        
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"サンプルデータロード中にエラーが発生しました:\n{str(e)}")
+            self._add_log(f"❌ エラー: {str(e)}")
+            self.status_label.setText("エラー: ロード失敗")
 
 
 class QuestionDialog(QDialog):

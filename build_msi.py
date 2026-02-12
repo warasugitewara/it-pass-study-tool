@@ -108,7 +108,7 @@ setup(
         <MajorUpgrade 
             DowngradeErrorMessage="より新しいバージョンが既にインストールされています"/>
         
-        <MediaSource Id="1" Cabinet="Media1.cab"/>
+        <Media Id="1" Cabinet="Media1.cab" EmbedCab="yes"/>
         
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFilesFolder">
@@ -148,10 +148,10 @@ setup(
                 <RemoveFolder Id="ApplicationProgramsFolderRemove" On="uninstall"/>
                 <RegistryValue 
                     Root="HKCU" 
-                    Key="Software\\Microsoft\\Windows\\CurrentVersion\\Run" 
-                    Name="{self.app_name}" 
+                    Key="Software\\{self.app_name}" 
+                    Name="StartMenuShortcut" 
                     Type="string" 
-                    Value="[INSTALLFOLDER]it-pass-study-tool.exe" 
+                    Value="1" 
                     KeyPath="yes"/>
             </Component>
         </DirectoryRef>

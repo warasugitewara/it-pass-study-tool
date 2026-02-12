@@ -3,10 +3,20 @@
 """
 
 import os
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from src.db.models import Base
 from pathlib import Path
+
+
+def get_app_data_dir() -> Path:
+    """アプリケーションデータディレクトリを取得（PyInstaller対応）"""
+    # ユーザーのAppDataディレクトリにデータを保存
+    app_data = Path(os.environ.get('APPDATA', Path.home() / 'AppData' / 'Roaming'))
+    data_dir = app_data / 'ITPassStudyTool' / 'data'
+    data_dir.mkdir(parents=True, exist_ok=True)
+    return data_dir
 
 
 class DatabaseManager:
@@ -19,8 +29,7 @@ class DatabaseManager:
                     デフォルト: プロジェクトルート/data/app.db
         """
         if db_path is None:
-            data_dir = Path(__file__).parent.parent.parent / "data"
-            data_dir.mkdir(exist_ok=True)
+            data_dir = get_app_data_dir()
             db_path = str(data_dir / "app.db")
         
         self.db_path = db_path

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-setuptools 設定ファイル
+setuptools 設定ファイル（MSI 対応版）
 パッケージのビルド・配布用メタデータを定義
 """
 
@@ -53,6 +53,7 @@ setup(
         "beautifulsoup4>=4.9.0",
         "lxml>=4.6.0",
         "matplotlib>=3.3.0",
+        "apscheduler>=3.10.0",
     ],
     
     # Python バージョン

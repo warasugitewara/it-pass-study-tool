@@ -14,6 +14,7 @@
 - 📊 **進捗可視化**: リアルタイムの成績追跡と統計表示
 - 🎯 **集中学習**: シンプルで直感的なUI設計
 - 💾 **データ管理**: テスト結果の自動保存とエクスポート機能
+- 🌐 **自動データ取得**: Webスクレイピングで最新の過去問を自動ロード
 - ⚡ **高速動作**: ローカルデータベースによるレスポンス
 
 **技術スタック:**
@@ -26,22 +27,31 @@
 
 ## 🚀 インストール・セットアップ
 
-### 方法1: インストーラーを使用（推奨）
+### 方法1: MSIインストーラーを使用（最も簡単・推奨）
 
-Windows用スタンドアロン実行ファイル：
+Windows用スタンドアロンインストーラー：
 
 ```bash
-# インストーラーをダウンロード
-ITPassStudyTool-1.0.0-installer.exe
+# Releases からダウンロード
+ITPassStudyTool-1.0.0.msi
 
 # ダブルクリックして実行
+# インストール後、スタートメニューまたはデスクトップから起動可能
 ```
 
-詳細は [INSTALL.md](INSTALL.md) を参照してください。
+**インストール場所**: `C:\Users\<YourUsername>\AppData\Local\ITPassStudyTool\`  
+**データベース**: `C:\Users\<YourUsername>\AppData\Roaming\ITPassStudyTool\data\app.db`
 
-### 方法2: ソースコードから実行
+### 方法2: スタンドアロン EXE を直接実行
 
-**前提条件:**
+```bash
+# Releases からダウンロード
+it-pass-study-tool.exe
+
+# ダブルクリックして実行（インストール不要）
+```
+
+### 方法3: ソースコードから実行
 - Python 3.11 以上
 - pip パッケージマネージャー
 
@@ -63,7 +73,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### 方法3: 実行ファイルから起動
+### 方法4: 実行ファイルから起動
 
 ```bash
 # EXEファイルのビルド（PyInstaller必要）
@@ -130,7 +140,13 @@ dist\it-pass-study-tool.exe
 - **インポート**: 外部データの取り込み
 - **バックアップ**: 学習データの保護
 
-### 4. ユーザー設定
+### 4. 問題データ自動ロード
+
+- **サンプルデータ**: アプリ起動時に自動ロード（2024年春、5問）
+- **Webスクレイピング**: Admin Panel から「Webスクレイピング」ボタンで最新の過去問を自動取得
+  - itpassportsiken.com から過去問データを抽出
+  - 重複チェック機能で同じ問題の二重登録を防止
+  - バリデーション機能で不正なデータを自動排除
 
 - ダークモード対応
 - フォントサイズ調整
@@ -185,8 +201,10 @@ it-pass-study-tool/
 │   │   ├── statistics.py  # 統計計算
 │   │   └── data_manager.py # データ管理
 │   ├── utils/             # ユーティリティ
-│   │   ├── importer.py    # CSV/JSON インポート
-│   │   └── config.py      # 設定ファイル
+│   │   ├── scraper.py     # Webスクレイピングエンジン
+│   │   ├── data_manager.py # データ管理
+│   │   ├── config.py      # 設定ファイル
+│   │   └── importer.py    # CSV/JSON インポート
 │   └── __init__.py
 ├── resources/             # リソース（アイコン、データ等）
 │   ├── icons/
@@ -241,16 +259,25 @@ python build_exe.py
 dist\it-pass-study-tool.exe
 ```
 
-### NSISインストーラーの生成
+### MSIインストーラーの生成
 
 ```bash
-# NSIS がインストール済みの場合
-cd "C:\Program Files (x86)\NSIS"
-makensis.exe C:\path\to\setup.nsi
+# WiX Toolset がインストール済みの場合
+python build_wix_msi.py
 
-# 生成されたインストーラー
-ITPassStudyTool-1.0.0-installer.exe
+# 生成されたMSI
+dist\ITPassStudyTool-1.0.0.msi
+
+# インストール方法
+msiexec /i ITPassStudyTool-1.0.0.msi
+
+# アンインストール
+msiexec /x ITPassStudyTool-1.0.0.msi
 ```
+
+**注**: WiX Toolset は以下からインストール可能：
+- Scoop: `scoop install wixtoolset`
+- 公式: https://github.com/wixtoolset/wix3/releases
 
 詳細は [DEVELOPMENT.md](DEVELOPMENT.md) を参照。
 
@@ -259,10 +286,17 @@ ITPassStudyTool-1.0.0-installer.exe
 ## 📈 バージョン情報
 
 **最新バージョン**: 1.0.0  
-**リリース日**: 2024年  
+**リリース日**: 2026年2月12日  
 **Python**: 3.11+
 
-詳細は [version.txt](version.txt) と [release_notes.md](release_notes.md) を参照。
+### v1.0.0 の新機能
+- ✨ Webスクレイピング機能: itpassportsiken.com から自動的に過去問を取得
+- 📦 MSIインストーラー対応: Windows ネイティブなインストーラー
+- 🔄 重複チェック: 同じ問題の重複登録を防止
+- 🎯 バリデーション: 不正なデータを自動排除
+- 📝 サンプルデータ: 初回起動時に5問の学習データを自動ロード
+
+詳細は [release_notes.md](release_notes.md) を参照。
 
 ---
 

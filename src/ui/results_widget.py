@@ -40,7 +40,7 @@ class ResultsWidget(QWidget):
         layout.addWidget(header)
         
         # タブ
-        tabs = Qt.bWidget()
+        tabs = QTabWidget()
         
         # タブ1: セッション結果
         tab_session = self._create_session_results_tab()
@@ -96,7 +96,7 @@ class ResultsWidget(QWidget):
         widget = QWidget()
         layout = QVBoxLayout()
         
-        table = Qt.bleWidget()
+        table = QTableWidget()
         table.setColumnCount(4)
         table.setHorizontalHeaderLabels(["分野", "正答数", "総問題数", "正答率"])
         
@@ -126,7 +126,7 @@ class ResultsWidget(QWidget):
         widget = QWidget()
         layout = QVBoxLayout()
         
-        table = Qt.bleWidget()
+        table = QTableWidget()
         table.setColumnCount(4)
         table.setHorizontalHeaderLabels(["問題（最初50文字）", "分野", "正答率", "出題数"])
         
@@ -168,16 +168,16 @@ class ResultsWidget(QWidget):
         self.category_table.setRowCount(len(stats))
         
         for row, (cat_name, cat_stats) in enumerate(sorted(stats.items())):
-            self.category_table.setItem(row, 0, Qt.bleWidgetItem(cat_name))
-            self.category_table.setItem(row, 1, Qt.bleWidgetItem(
+            self.category_table.setItem(row, 0, QTableWidgetItem(cat_name))
+            self.category_table.setItem(row, 1, QTableWidgetItem(
                 str(cat_stats.get('correct_count', 0))
             ))
-            self.category_table.setItem(row, 2, Qt.bleWidgetItem(
+            self.category_table.setItem(row, 2, QTableWidgetItem(
                 str(cat_stats.get('total_questions', 0))
             ))
             
             rate = cat_stats.get('correct_rate', 0)
-            rate_item = Qt.bleWidgetItem(f"{rate:.1f}%")
+            rate_item = QTableWidgetItem(f"{rate:.1f}%")
             
             # 正答率に応じて色を変更
             if rate >= 70:
@@ -212,14 +212,14 @@ class ResultsWidget(QWidget):
         self.weak_points_table.setRowCount(len(weak_points))
         
         for row, point in enumerate(weak_points):
-            self.weak_points_table.setItem(row, 0, Qt.bleWidgetItem(point.get('text', '...')))
-            self.weak_points_table.setItem(row, 1, Qt.bleWidgetItem(point.get('category', '')))
+            self.weak_points_table.setItem(row, 0, QTableWidgetItem(point.get('text', '...')))
+            self.weak_points_table.setItem(row, 1, QTableWidgetItem(point.get('category', '')))
             
-            rate_item = Qt.bleWidgetItem(f"{point.get('correct_rate', 0):.1f}%")
+            rate_item = QTableWidgetItem(f"{point.get('correct_rate', 0):.1f}%")
             rate_item.setForeground(QColor(COLOR_INCORRECT))
             self.weak_points_table.setItem(row, 2, rate_item)
             
-            self.weak_points_table.setItem(row, 3, Qt.bleWidgetItem(
+            self.weak_points_table.setItem(row, 3, QTableWidgetItem(
                 str(point.get('attempt_count', 0))
             ))
         

@@ -50,6 +50,10 @@ def get_hidden_imports():
         "bs4",
         "lxml",
         "matplotlib",
+        "apscheduler",
+        "apscheduler.schedulers.background",
+        "apscheduler.triggers.cron",
+        "apscheduler.triggers.interval",
         
         # プロジェクトの src モジュール
         "src",
@@ -58,14 +62,19 @@ def get_hidden_imports():
         "src.db.models",
         "src.ui",
         "src.ui.main_window",
-        "src.ui.widgets",
-        "src.ui.dialogs",
+        "src.ui.quiz_widget",
+        "src.ui.quiz_config_dialog",
+        "src.ui.admin_panel",
+        "src.ui.results_widget",
+        "src.ui.styles",
         "src.core",
-        "src.core.question_manager",
+        "src.core.quiz_engine",
         "src.core.statistics",
         "src.utils",
-        "src.utils.helpers",
-        "src.utils.validators",
+        "src.utils.config",
+        "src.utils.data_manager",
+        "src.utils.scraper",
+        "src.utils.scraper_scheduler",
     ]
     return hidden_imports
 
@@ -110,6 +119,11 @@ def build_exe():
     if (PROJECT_DIR / "resources").exists():
         pyinstaller_cmd.extend(["--add-data", f"{PROJECT_DIR / 'resources'};resources"])
         print(f"  • リソースディレクトリを追加")
+    
+    # version.txt を追加
+    if (PROJECT_DIR / "version.txt").exists():
+        pyinstaller_cmd.extend(["--add-data", f"{PROJECT_DIR / 'version.txt'};."])
+        print(f"  • version.txt を追加")
     
     # メインスクリプトを追加
     pyinstaller_cmd.append(str(MAIN_SCRIPT))
