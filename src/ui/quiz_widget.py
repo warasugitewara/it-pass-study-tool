@@ -16,6 +16,8 @@ from src.ui.styles import (
 )
 from src.core import get_quiz_engine, QuizMode
 from src.ui.quiz_config_dialog import QuizConfigDialog
+from src.db.models import Question
+from src.utils.data_manager import get_data_manager
 
 
 class QuizWidget(QWidget):
@@ -78,8 +80,32 @@ class QuizWidget(QWidget):
         
         for i in range(4):
             radio = QRadioButton()
-            radio.setFont(QFont("Segoe UI", 12))
-            radio.setStyleSheet(f"color: {COLOR_TEXT_PRIMARY}; padding: 8px;")
+            radio.setFont(QFont("Segoe UI", 13, QFont.Weight.Medium))
+            # 選択肢を見やすくスタイル改善
+            radio.setStyleSheet(f"""
+                QRadioButton {{
+                    color: {COLOR_TEXT_PRIMARY};
+                    padding: 12px 8px;
+                    spacing: 8px;
+                }}
+                QRadioButton::indicator {{
+                    width: 24px;
+                    height: 24px;
+                }}
+                QRadioButton::indicator:unchecked {{
+                    background-color: {COLOR_TEXT_SECONDARY};
+                    border: 2px solid {COLOR_ACCENT};
+                    border-radius: 12px;
+                }}
+                QRadioButton::indicator:checked {{
+                    background-color: {COLOR_PRIMARY};
+                    border: 2px solid {COLOR_ACCENT};
+                    border-radius: 12px;
+                }}
+                QRadioButton::indicator:hover {{
+                    background-color: {COLOR_ACCENT};
+                }}
+            """)
             self.choices_group.addButton(radio, i)
             self.choice_buttons.append(radio)
             layout.addWidget(radio)
@@ -151,6 +177,9 @@ class QuizWidget(QWidget):
     
     def _display_question(self):
         """現在の問題を表示"""
+        from src.db.database import DatabaseManager
+        from src.db.models import Question
+        
         question = self.engine.get_current_question()
         if not question:
             self._show_results()
@@ -165,10 +194,20 @@ class QuizWidget(QWidget):
         # 問題文表示
         self.question_label.setText(question.text)
         
-        # 選択肢表示・リセット
-        for i, choice in enumerate(question.choices):
-            self.choice_buttons[i].setText(f"{chr(65+i)}. {choice.text}")
-            self.choice_buttons[i].show()
+        # DB からリロードして選択肢を取得
+        db_manager = DatabaseManager()
+        session = db_manager.get_session()
+        try:
+            q_db = session.query(Question).filter_by(id=question.id).first()
+            
+            # 選択肢表示・リセット
+            if q_db and q_db.choices:
+                for i, choice in enumerate(q_db.choices):
+                    choice_text = f"{chr(65+i)}. {choice.text}"
+                    self.choice_buttons[i].setText(choice_text)
+                    self.choice_buttons[i].show()
+        finally:
+            db_manager.close_session(session)
         
         self.choices_group.setExclusive(False)
         for button in self.choice_buttons:
@@ -187,8 +226,16 @@ class QuizWidget(QWidget):
         selected_id = self.choices_group.checkedId()
         if selected_id != -1:
             question = self.engine.get_current_question()
-            choice = question.choices[selected_id]
-            self.engine.submit_answer(choice.id, 0)
+            # DB マネージャー経由でセッションを取得して choices にアクセス
+            dm = get_data_manager()
+            session = dm.db.get_session()
+            try:
+                question = session.query(Question).filter_by(id=question.id).first()
+                if question and selected_id < len(question.choices):
+                    choice = question.choices[selected_id]
+                    self.engine.submit_answer(choice.id, 0)
+            finally:
+                dm.db.close_session(session)
         
         # 次の問題へ
         if self.engine.get_current_index() == self.engine.get_question_count() - 1:

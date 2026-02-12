@@ -7,11 +7,38 @@ from PySide6.QtWidgets import (
     QCheckBox, QGroupBox, QMessageBox, QScrollArea, QWidget
 )
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QIcon, QPixmap, QPainter, QColor
 
-from src.ui.styles import COLOR_PRIMARY, COLOR_TEXT_PRIMARY, PADDING_MEDIUM
+from src.ui.styles import COLOR_PRIMARY, COLOR_TEXT_PRIMARY, COLOR_ACCENT, PADDING_MEDIUM
 from src.utils.data_manager import get_data_manager
 from src.core import QuizMode
+
+
+def create_checkbox_icon(checked: bool, size: int = 20) -> QIcon:
+    """チェックボックス用アイコンを生成"""
+    pixmap = QPixmap(size, size)
+    pixmap.fill(Qt.transparent)
+    
+    painter = QPainter(pixmap)
+    
+    if checked:
+        # チェック済み: 青い背景
+        painter.fillRect(0, 0, size, size, QColor(COLOR_PRIMARY))
+        # 白いチェックマーク
+        painter.setPen(Qt.white)
+        painter.setRenderHint(QPainter.Antialiasing)
+        painter.drawLine(5, 10, 8, 13)
+        painter.drawLine(8, 13, 15, 6)
+    else:
+        # 未チェック: 白い背景
+        painter.fillRect(0, 0, size, size, Qt.white)
+    
+    # ボーダー
+    painter.setPen(QColor(COLOR_ACCENT))
+    painter.drawRect(0, 0, size - 1, size - 1)
+    painter.end()
+    
+    return QIcon(pixmap)
 
 
 class QuizConfigDialog(QDialog):
@@ -57,7 +84,7 @@ class QuizConfigDialog(QDialog):
             btn = QPushButton(f"{mode_label}\n{mode_desc}")
             btn.setMinimumHeight(50)
             btn.setCheckable(True)
-            btn.clicked.connect(lambda checked, m=mode_key: self._select_mode(m))
+            btn.clicked.connect(lambda checked=False, m=mode_key: self._select_mode(m))
             self.mode_buttons[mode_key] = btn
             mode_layout.addWidget(btn)
         
@@ -99,6 +126,23 @@ class QuizConfigDialog(QDialog):
         for year in years[:10]:  # 最新10年度
             checkbox = QCheckBox(f"{year.year}年 {year.season or ''}")
             checkbox.setChecked(True)
+            checkbox.setStyleSheet(f"""
+                QCheckBox {{
+                    color: {COLOR_TEXT_PRIMARY};
+                    padding: 6px 4px;
+                    font-size: 12px;
+                }}
+                QCheckBox::indicator {{
+                    width: 20px;
+                    height: 20px;
+                }}
+            """)
+            # アイコンを設定
+            checkbox.setIcon(create_checkbox_icon(True))
+            # 状態変更時にアイコンを更新
+            checkbox.stateChanged.connect(
+                lambda state, cb=checkbox: cb.setIcon(create_checkbox_icon(cb.isChecked()))
+            )
             year_inner_layout.addWidget(checkbox)
             self.year_checkboxes[year.id] = checkbox
         
@@ -123,6 +167,24 @@ class QuizConfigDialog(QDialog):
         for category in categories:
             checkbox = QCheckBox(category.name)
             checkbox.setChecked(True)
+            checkbox.setStyleSheet(f"""
+                QCheckBox {{
+                    color: {COLOR_TEXT_PRIMARY};
+                    padding: 6px 4px;
+                    font-size: 12px;
+                    font-weight: bold;
+                }}
+                QCheckBox::indicator {{
+                    width: 20px;
+                    height: 20px;
+                }}
+            """)
+            # アイコンを設定
+            checkbox.setIcon(create_checkbox_icon(True))
+            # 状態変更時にアイコンを更新
+            checkbox.stateChanged.connect(
+                lambda state, cb=checkbox: cb.setIcon(create_checkbox_icon(cb.isChecked()))
+            )
             category_inner_layout.addWidget(checkbox)
             self.category_checkboxes[category.id] = checkbox
         

@@ -1,13 +1,15 @@
 """
 ITパスポート過去問スクレイパー
 複数ソースからの過去問データ自動取得
+重複チェック・バッチ更新・エラーハンドリング機能搭載
 """
 
 import requests
 from bs4 import BeautifulSoup
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 import logging
 from datetime import datetime
+from hashlib import md5
 
 logger = logging.getLogger(__name__)
 
@@ -27,9 +29,18 @@ class ITPassScraper:
         "テクノロジ": "technology"
     }
     
-    def __init__(self):
+    def __init__(self, data_manager=None):
         self.session = requests.Session()
         self.session.headers.update(self.HEADERS)
+        self.data_manager = data_manager
+        self.stats = {
+            'fetched': 0,
+            'added': 0,
+            'duplicated': 0,
+            'errors': 0,
+            'start_time': None,
+            'end_time': None
+        }
     
     def get_past_exams(self) -> List[Dict]:
         """
@@ -50,10 +61,15 @@ class ITPassScraper:
             for link in links:
                 href = link['href']
                 if '/kakomon/' in href and href.endswith('/'):
-                    past_exams.append(self._parse_exam_url(href))
+                    exam = self._parse_exam_url(href)
+                    if exam:
+                        past_exams.append(exam)
             
+            logger.info(f"過去問情報取得: {len(past_exams)}件")
+        except requests.Timeout:
+            logger.error(f"過去問情報取得タイムアウト: {url}")
         except Exception as e:
-            logger.error(f"過去問情報取得エラー: {e}")
+            logger.error(f"過去問情報取得エラー: {e}", exc_info=True)
         
         return past_exams
     
@@ -105,8 +121,11 @@ class ITPassScraper:
                 if question:
                     questions.append(question)
             
+            logger.info(f"問題取得: {url} → {len(questions)}件")
+        except requests.Timeout:
+            logger.error(f"問題取得タイムアウト: {exam_url}")
         except Exception as e:
-            logger.error(f"問題取得エラー ({exam_url}): {e}")
+            logger.error(f"問題取得エラー ({exam_url}): {e}", exc_info=True)
         
         return questions
     
@@ -186,6 +205,127 @@ class ITPassScraper:
             return False
         
         return True
+    
+    def get_question_hash(self, year: int, category: str, question_number: int) -> str:
+        """問題の重複チェック用ハッシュを生成（年度+分野+問題番号で一意判定）"""
+        unique_key = f"{year}:{category}:{question_number}"
+        return md5(unique_key.encode()).hexdigest()
+    
+    def check_duplicate(self, year: int, category: str, question_number: int) -> bool:
+        """問題が既に登録されているか確認"""
+        if not self.data_manager:
+            return False
+        
+        try:
+            from sqlalchemy import and_
+            session = self.data_manager.db.get_session()
+            from src.db import Question, Category, Year
+            
+            result = session.query(Question).join(Category).join(Year).filter(
+                and_(
+                    Year.year == year,
+                    Category.name == category,
+                    Question.question_number == question_number
+                )
+            ).first()
+            
+            self.data_manager.db.close_session(session)
+            return result is not None
+        except Exception as e:
+            logger.error(f"重複チェックエラー: {e}")
+            return False
+    
+    def bulk_scrape_and_update(self, exams: List[Dict] = None) -> Dict:
+        """
+        複数の試験からスクレイピングしてDBに一括更新（差分抽出）
+        Args:
+            exams: 取得対象の試験情報リスト（Noneの場合は自動取得）
+        Returns: スクレイピング統計情報
+        """
+        self.stats['start_time'] = datetime.now()
+        
+        try:
+            if exams is None:
+                exams = self.get_past_exams()
+            
+            if not exams:
+                logger.warning("スクレイピング対象の試験情報がありません")
+                self.stats['end_time'] = datetime.now()
+                return self.stats
+            
+            logger.info(f"スクレイピング開始: {len(exams)}試験")
+            
+            # 差分データ収集
+            new_questions = []
+            
+            for exam in exams:
+                try:
+                    questions = self.get_questions_from_exam(exam.get('url', ''))
+                    
+                    for question in questions:
+                        # 重複チェック
+                        if self.check_duplicate(
+                            exam.get('year'),
+                            question.get('category'),
+                            question.get('question_number')
+                        ):
+                            self.stats['duplicated'] += 1
+                            logger.debug(f"重複: {exam.get('year')} {question.get('category')} 問{question.get('question_number')}")
+                            continue
+                        
+                        # 妥当性チェック
+                        if not self.validate_question(question):
+                            self.stats['errors'] += 1
+                            logger.warning(f"不正な問題データ: {question}")
+                            continue
+                        
+                        # 試験情報をマージ
+                        question.update({
+                            'year': exam.get('year'),
+                            'season': exam.get('season')
+                        })
+                        new_questions.append(question)
+                        self.stats['fetched'] += 1
+                
+                except Exception as e:
+                    self.stats['errors'] += 1
+                    logger.error(f"試験スクレイピング失敗 ({exam}): {e}")
+                    continue
+            
+            # DB に一括追加
+            if new_questions and self.data_manager:
+                try:
+                    self.stats['added'] = self.data_manager.bulk_add_questions(new_questions)
+                    logger.info(f"スクレイピング完了: 新規追加 {self.stats['added']}件")
+                except Exception as e:
+                    logger.error(f"DB追加エラー: {e}")
+                    self.stats['errors'] += len(new_questions)
+            
+        except Exception as e:
+            logger.error(f"スクレイピング処理エラー: {e}", exc_info=True)
+        
+        finally:
+            self.stats['end_time'] = datetime.now()
+        
+        return self.stats
+    
+    def get_last_update_time(self) -> Optional[datetime]:
+        """最終更新日時を取得"""
+        try:
+            if not self.data_manager:
+                return None
+            
+            session = self.data_manager.db.get_session()
+            from src.db import Question
+            
+            latest = session.query(Question).order_by(Question.created_at.desc()).first()
+            self.data_manager.db.close_session(session)
+            
+            return latest.created_at if latest else None
+        except Exception as e:
+            logger.error(f"最終更新日時取得エラー: {e}")
+            return None
+
 
 
 # 使用例
