@@ -3,12 +3,12 @@
 問題出題・回答・結果表示を担当
 """
 
-from PyQt6.QtWidgets import (
+from PySide6.Qt.idgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QRadioButton,
     QButtonGroup, QProgressBar, QSpinBox, QComboBox, QMessageBox, QDialog
 )
-from PyQt6.QtCore import Qt, pyqtSignal, QTimer, QTime
-from PyQt6.QtGui import QFont
+from PySide6.Qt.ore import Qt. Signal, Qt.mer, Qt.me
+from PySide6.Qt.ui import QFont
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_CORRECT, COLOR_INCORRECT, COLOR_TEXT_PRIMARY,
@@ -21,7 +21,7 @@ from src.ui.quiz_config_dialog import QuizConfigDialog
 class QuizWidget(QWidget):
     """クイズ出題ウィジェット"""
     
-    back_requested = pyqtSignal()
+    back_requested = Signal()
     
     def __init__(self):
         super().__init__()
@@ -109,7 +109,7 @@ class QuizWidget(QWidget):
     
     def _setup_timer(self):
         """タイマーセットアップ"""
-        self.timer = QTimer()
+        self.timer = Qt.mer()
         self.timer.timeout.connect(self._update_timer)
     
     def _update_timer(self):

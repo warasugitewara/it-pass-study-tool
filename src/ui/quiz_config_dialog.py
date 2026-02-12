@@ -2,12 +2,12 @@
 クイズ設定ダイアログ - 出題モード・フィルター選択
 """
 
-from PyQt6.QtWidgets import (
+from PySide6.Qt.idgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QSpinBox,
     QCheckBox, QGroupBox, QMessageBox, QScrollArea, QWidget
 )
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QFont
+from PySide6.Qt.ore import Qt. Signal
+from PySide6.Qt.ui import QFont
 
 from src.ui.styles import COLOR_PRIMARY, COLOR_TEXT_PRIMARY, PADDING_MEDIUM
 from src.utils.data_manager import get_data_manager
@@ -17,7 +17,7 @@ from src.core import QuizMode
 class QuizConfigDialog(QDialog):
     """クイズ設定ダイアログ"""
     
-    quiz_started = pyqtSignal(str, dict)  # (mode, config)
+    quiz_started = Signal(str, dict)  # (mode, config)
     
     def __init__(self, parent=None):
         super().__init__(parent)

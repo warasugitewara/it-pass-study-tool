@@ -3,12 +3,12 @@
 セッション終了後の成績・統計表示
 """
 
-from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QTabWidget,
-    QTableWidget, QTableWidgetItem, QScrollArea
+from PySide6.Qt.idgets import (
+    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, Qt.bWidget,
+    Qt.bleWidget, Qt.bleWidgetItem, QScrollArea
 )
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QFont, QColor
+from PySide6.Qt.ore import Qt. Signal
+from PySide6.Qt.ui import QFont, QColor
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_CORRECT, COLOR_INCORRECT, COLOR_TEXT_PRIMARY,
@@ -20,7 +20,7 @@ from src.core.statistics import get_statistics_engine
 class ResultsWidget(QWidget):
     """結果表示ウィジェット"""
     
-    back_requested = pyqtSignal()
+    back_requested = Signal()
     
     def __init__(self):
         super().__init__()
@@ -40,7 +40,7 @@ class ResultsWidget(QWidget):
         layout.addWidget(header)
         
         # タブ
-        tabs = QTabWidget()
+        tabs = Qt.bWidget()
         
         # タブ1: セッション結果
         tab_session = self._create_session_results_tab()
@@ -96,7 +96,7 @@ class ResultsWidget(QWidget):
         widget = QWidget()
         layout = QVBoxLayout()
         
-        table = QTableWidget()
+        table = Qt.bleWidget()
         table.setColumnCount(4)
         table.setHorizontalHeaderLabels(["分野", "正答数", "総問題数", "正答率"])
         
@@ -126,7 +126,7 @@ class ResultsWidget(QWidget):
         widget = QWidget()
         layout = QVBoxLayout()
         
-        table = QTableWidget()
+        table = Qt.bleWidget()
         table.setColumnCount(4)
         table.setHorizontalHeaderLabels(["問題（最初50文字）", "分野", "正答率", "出題数"])
         
@@ -168,16 +168,16 @@ class ResultsWidget(QWidget):
         self.category_table.setRowCount(len(stats))
         
         for row, (cat_name, cat_stats) in enumerate(sorted(stats.items())):
-            self.category_table.setItem(row, 0, QTableWidgetItem(cat_name))
-            self.category_table.setItem(row, 1, QTableWidgetItem(
+            self.category_table.setItem(row, 0, Qt.bleWidgetItem(cat_name))
+            self.category_table.setItem(row, 1, Qt.bleWidgetItem(
                 str(cat_stats.get('correct_count', 0))
             ))
-            self.category_table.setItem(row, 2, QTableWidgetItem(
+            self.category_table.setItem(row, 2, Qt.bleWidgetItem(
                 str(cat_stats.get('total_questions', 0))
             ))
             
             rate = cat_stats.get('correct_rate', 0)
-            rate_item = QTableWidgetItem(f"{rate:.1f}%")
+            rate_item = Qt.bleWidgetItem(f"{rate:.1f}%")
             
             # 正答率に応じて色を変更
             if rate >= 70:
@@ -212,14 +212,14 @@ class ResultsWidget(QWidget):
         self.weak_points_table.setRowCount(len(weak_points))
         
         for row, point in enumerate(weak_points):
-            self.weak_points_table.setItem(row, 0, QTableWidgetItem(point.get('text', '...')))
-            self.weak_points_table.setItem(row, 1, QTableWidgetItem(point.get('category', '')))
+            self.weak_points_table.setItem(row, 0, Qt.bleWidgetItem(point.get('text', '...')))
+            self.weak_points_table.setItem(row, 1, Qt.bleWidgetItem(point.get('category', '')))
             
-            rate_item = QTableWidgetItem(f"{point.get('correct_rate', 0):.1f}%")
+            rate_item = Qt.bleWidgetItem(f"{point.get('correct_rate', 0):.1f}%")
             rate_item.setForeground(QColor(COLOR_INCORRECT))
             self.weak_points_table.setItem(row, 2, rate_item)
             
-            self.weak_points_table.setItem(row, 3, QTableWidgetItem(
+            self.weak_points_table.setItem(row, 3, Qt.bleWidgetItem(
                 str(point.get('attempt_count', 0))
             ))
         

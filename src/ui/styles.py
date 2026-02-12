@@ -38,7 +38,7 @@ MARGIN_SMALL = 10
 BORDER_RADIUS = 6
 BORDER_WIDTH = 1
 
-# PyQt6 スタイルシート
+# PySide6 スタイルシート
 MAIN_STYLESHEET = f"""
 QMainWindow, QWidget {{
     background-color: {COLOR_BACKGROUND};
@@ -74,7 +74,7 @@ QPushButton:disabled {{
     color: {COLOR_TEXT_SECONDARY};
 }}
 
-QLineEdit, QTextEdit, QComboBox {{
+QLineEdit, Qt.xtEdit, QComboBox {{
     background-color: {COLOR_SURFACE};
     color: {COLOR_TEXT_PRIMARY};
     border: {BORDER_WIDTH}px solid {COLOR_BORDER};
@@ -84,7 +84,7 @@ QLineEdit, QTextEdit, QComboBox {{
     selection-background-color: {COLOR_PRIMARY};
 }}
 
-QLineEdit:focus, QTextEdit:focus, QComboBox:focus {{
+QLineEdit:focus, Qt.xtEdit:focus, QComboBox:focus {{
     border: {BORDER_WIDTH}px solid {COLOR_ACCENT};
 }}
 
@@ -120,11 +120,11 @@ QGroupBox::title {{
     padding: 0 5px 0 5px;
 }}
 
-QTabWidget::pane {{
+Qt.bWidget::pane {{
     border: {BORDER_WIDTH}px solid {COLOR_BORDER};
 }}
 
-QTabBar::tab {{
+Qt.bBar::tab {{
     background-color: {COLOR_SURFACE};
     color: {COLOR_TEXT_SECONDARY};
     padding: 8px 15px;
@@ -132,12 +132,12 @@ QTabBar::tab {{
     font-family: {FONT_FAMILY};
 }}
 
-QTabBar::tab:selected {{
+Qt.bBar::tab:selected {{
     background-color: {COLOR_PRIMARY};
     color: {COLOR_TEXT_PRIMARY};
 }}
 
-QTableWidget {{
+Qt.bleWidget {{
     background-color: {COLOR_BACKGROUND};
     alternate-background-color: {COLOR_SURFACE};
     gridline-color: {COLOR_BORDER};
@@ -145,7 +145,7 @@ QTableWidget {{
     font-family: {FONT_FAMILY};
 }}
 
-QTableWidget::item {{
+Qt.bleWidget::item {{
     padding: 5px;
 }}
 
