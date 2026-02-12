@@ -9,7 +9,11 @@ Web自動取得機能は実装されていません。
 """
 
 import logging
+import requests
 from typing import List, Dict, Optional
+from datetime import datetime
+from hashlib import md5
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +28,13 @@ class ITPassScraper:
     
     def __init__(self, data_manager=None):
         self.data_manager = data_manager
+        self.BASE_URL_SIKEN = "https://itpassportsiken.com"
+        self.session = requests.Session()
+        self.CATEGORIES = {
+            "ストラテジ": "strategy",
+            "マネジメント": "management",
+            "テクノロジ": "technology"
+        }
         self.stats = {
             'fetched': 0,
             'added': 0,

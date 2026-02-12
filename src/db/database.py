@@ -50,7 +50,7 @@ class DatabaseManager:
     def init_db(self):
         """テーブル作成（初回実行時）"""
         Base.metadata.create_all(bind=self.engine)
-        print(f"✓ Database initialized: {self.db_path}")
+        print(f"[OK] Database initialized: {self.db_path}")
     
     def get_session(self) -> Session:
         """セッション取得"""
