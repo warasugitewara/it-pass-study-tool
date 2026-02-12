@@ -12,6 +12,7 @@ from PyQt6.QtGui import QIcon, QFont
 from src.ui.styles import MAIN_STYLESHEET, COLOR_PRIMARY, COLOR_TEXT_PRIMARY
 from src.ui.quiz_widget import QuizWidget
 from src.ui.admin_panel import AdminPanel
+from src.ui.results_widget import ResultsWidget
 
 
 class MainWindow(QMainWindow):
@@ -56,6 +57,11 @@ class MainWindow(QMainWindow):
         self.quiz_widget = QuizWidget()
         self.quiz_widget.back_requested.connect(self._show_dashboard)
         self.stacked_widget.addWidget(self.quiz_widget)
+        
+        # 結果画面
+        self.results_widget = ResultsWidget()
+        self.results_widget.back_requested.connect(self._show_dashboard)
+        self.stacked_widget.addWidget(self.results_widget)
         
         # 管理画面
         self.admin_panel = AdminPanel()
@@ -162,6 +168,11 @@ class MainWindow(QMainWindow):
         """クイズ開始"""
         self.quiz_widget.initialize(mode)
         self.stacked_widget.setCurrentWidget(self.quiz_widget)
+    
+    def show_results(self, session_stats: dict):
+        """結果表示画面を表示"""
+        self.results_widget.update_all_statistics(session_stats)
+        self.stacked_widget.setCurrentWidget(self.results_widget)
     
     def _show_dashboard(self):
         """ダッシュボード表示"""

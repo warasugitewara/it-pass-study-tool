@@ -190,11 +190,12 @@ class QuizWidget(QWidget):
             choice = question.choices[selected_id]
             self.engine.submit_answer(choice.id, 0)
         
-        # 次の問題へ
-        if self.engine.get_current_index() == self.engine.get_question_count() - 1:
+        # 最後の問題の場合は結果表示
+        if self.engine.get_current_index() >= self.engine.get_question_count() - 1:
             self._show_results()
             return
         
+        # 次の問題へ
         self.engine.next_question()
         self._display_question()
     
@@ -209,23 +210,11 @@ class QuizWidget(QWidget):
         
         results = self.engine.finish_session()
         
-        if results:
-            correct_rate = results.get('correct_rate', 0)
-            message = (
-                f"クイズ完了！\n\n"
-                f"正答数: {results.get('correct_count')}/{results.get('total_questions')}問\n"
-                f"正答率: {correct_rate:.1f}%\n"
-                f"学習時間: {results.get('elapsed_time', 0)}秒"
-            )
-            
-            if correct_rate >= 70:
-                QMessageBox.information(self, "✓ 良好です！", message)
-            elif correct_rate >= 50:
-                QMessageBox.information(self, "👍 お疲れ様でした", message)
-            else:
-                QMessageBox.information(self, "📚 もう一度チャレンジ", message)
-        
-        self.back_requested.emit()
+        if results and self.parentWidget() and hasattr(self.parentWidget().parentWidget(), 'show_results'):
+            # メインウィンドウの show_results メソッドを呼び出す
+            self.parentWidget().parentWidget().show_results(results)
+        else:
+            self.back_requested.emit()
     
     def _confirm_back(self):
         """戻る確認"""
