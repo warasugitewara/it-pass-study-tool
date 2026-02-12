@@ -3,12 +3,12 @@
 セッション終了後の成績・統計表示
 """
 
-from PySide6.Qt.idgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, Qt.bWidget,
-    Qt.bleWidget, Qt.bleWidgetItem, QScrollArea
+from PySide6.QtWidgets import (
+    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QScrollArea,
+    QTableWidget, QTableWidgetItem, QTabWidget
 )
-from PySide6.Qt.ore import Qt. Signal
-from PySide6.Qt.ui import QFont, QColor
+from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QFont, QColor
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_CORRECT, COLOR_INCORRECT, COLOR_TEXT_PRIMARY,
