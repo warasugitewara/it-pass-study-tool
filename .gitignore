@@ -1,0 +1,18 @@
+# Git ignore rules
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.db
+*.sqlite3
+.env
+.vscode/
+.idea/
+*.log
+node_modules/
+.DS_Store
