@@ -801,13 +801,14 @@ class AdminPanel(QWidget):
             logger.error(f"時刻変更エラー: {e}")
     
     def _scrape_from_web(self):
-        """Webからスクレイピング実行"""
+        """Webからスクレイピング実行またはフォールバックデータをロード"""
         try:
             reply = QMessageBox.question(
                 self,
                 "確認",
                 "WebからITパスポート過去問をスクレイピングします。\n\n"
-                "注意: サイトの構造によってはデータ取得に失敗する可能性があります。\n"
+                "注意: サイトの構造が変わっている場合、自動フォールバック用の\n"
+                "サンプルデータが代わりにロードされます。\n\n"
                 "ネットワーク接続を確認してから実行してください。",
                 QMessageBox.Yes | QMessageBox.No
             )
@@ -823,7 +824,7 @@ class AdminPanel(QWidget):
             scraper = ITPassScraper(self.data_manager)
             stats = scraper.bulk_scrape_and_update()
             
-            self._add_log(f"✅ スクレイピング完了:")
+            self._add_log(f"✅ スクレイピング結果:")
             self._add_log(f"   取得件数: {stats['fetched']}")
             self._add_log(f"   追加件数: {stats['added']}")
             self._add_log(f"   重複: {stats['duplicated']}")
@@ -846,11 +847,29 @@ class AdminPanel(QWidget):
                     f"{stats['fetched']}件の問題を取得しましたが、重複のため追加されませんでした。"
                 )
             else:
-                QMessageBox.warning(
-                    self,
-                    "警告",
-                    "問題を取得できませんでした。\nサイトの構造が変わっている可能性があります。"
-                )
+                # フォールバック: サンプルデータをロード
+                self._add_log("⚠️  Webスクレイピングに失敗。フォールバックデータをロードします...")
+                fallback_added = self._load_fallback_sample_data()
+                
+                if fallback_added > 0:
+                    QMessageBox.information(
+                        self,
+                        "フォールバック",
+                        f"Webからのデータ取得に失敗しました。\n\n"
+                        f"代わりに {fallback_added} 件のサンプルデータ（2024年秋）を\n"
+                        f"ロードしました。\n\n"
+                        f"サイト構造が変わっている可能性があります。\n"
+                        f"詳細は GitHub Issues で報告してください。"
+                    )
+                    self._load_initial_data()
+                    self._apply_filters()
+                else:
+                    QMessageBox.warning(
+                        self,
+                        "警告",
+                        "問題を取得できませんでした。\nサイトの構造が変わっている可能性があります。\n"
+                        "GitHub Issues でご報告ください。"
+                    )
         
         except ImportError:
             QMessageBox.warning(
@@ -909,6 +928,31 @@ class AdminPanel(QWidget):
             QMessageBox.critical(self, "エラー", f"サンプルデータロード中にエラーが発生しました:\n{str(e)}")
             self._add_log(f"❌ エラー: {str(e)}")
             self.status_label.setText("エラー: ロード失敗")
+    
+    def _load_fallback_sample_data(self) -> int:
+        """フォールバック用サンプルデータをロード（秋データ）"""
+        try:
+            fallback_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_autumn.json"
+            
+            if not fallback_file.exists():
+                self._add_log("⚠️  フォールバックデータも見つかりません")
+                return 0
+            
+            with open(fallback_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            questions = data.get('questions', [])
+            count = self.data_manager.bulk_add_questions(questions)
+            
+            self._add_log(f"✅ フォールバックデータ: {count}件追加")
+            return count
+        
+        except Exception as e:
+            self._add_log(f"❌ フォールバック失敗: {str(e)}")
+            return 0
+
+
+
 
 
 class QuestionDialog(QDialog):

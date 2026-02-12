@@ -55,15 +55,32 @@ class ITPassScraper:
             response.encoding = 'utf-8'
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # ディレクトリリストを取得（構造に応じて調整）
-            # 例: /kakomon/07_haru/ (令和7年春)
-            links = soup.find_all('a', href=True)
-            for link in links:
-                href = link['href']
-                if '/kakomon/' in href and href.endswith('/'):
-                    exam = self._parse_exam_url(href)
-                    if exam:
-                        past_exams.append(exam)
+            # 複数のセレクタをを試す（サイト構造の変更に対応）
+            selectors = [
+                ('a[href*="/kakomon/"][href$="/"]', 'href'),  # /kakomon/##_season/ パターン
+                ('a.kakomon-link', 'href'),                   # kakomon-link クラス
+                ('a[title*="問題"]', 'href'),                 # タイトルに「問題」
+            ]
+            
+            for selector, attr in selectors:
+                try:
+                    if selector.startswith('a['):
+                        links = soup.select(selector)
+                    else:
+                        links = soup.find_all('a', class_=selector.split('.')[1])
+                    
+                    for link in links:
+                        href = link.get(attr, '')
+                        if href and '/kakomon/' in href:
+                            exam = self._parse_exam_url(href)
+                            if exam and exam not in past_exams:
+                                past_exams.append(exam)
+                    
+                    if past_exams:
+                        break  # 見つかったら他のセレクタは試さない
+                except Exception as selector_error:
+                    logger.debug(f"セレクタ試行失敗 ({selector}): {selector_error}")
+                    continue
             
             logger.info(f"過去問情報取得: {len(past_exams)}件")
         except requests.Timeout:
@@ -132,48 +149,120 @@ class ITPassScraper:
     def _extract_question(self, element, question_number: int) -> Optional[Dict]:
         """HTML要素から問題情報を抽出"""
         try:
-            # 問題文
-            text_elem = element.find('p', class_='question_text')
-            if not text_elem:
-                return None
-            text = text_elem.get_text(strip=True)
+            # 複数の可能なセレクタをを試す
+            text_selectors = [
+                ('p', 'question_text'),
+                ('div', 'question_text'),
+                ('p', 'mondai'),
+                ('span', 'question'),
+                ('div', 'mondai_text'),
+            ]
             
-            # 選択肢（A, B, C, D）
+            text = None
+            for tag, cls in text_selectors:
+                elem = element.find(tag, class_=cls)
+                if elem:
+                    text = elem.get_text(strip=True)
+                    break
+            
+            # タグがない場合、直接テキスト取得
+            if not text:
+                text_elem = element.find(['p', 'div'])
+                if text_elem:
+                    text = text_elem.get_text(strip=True)
+            
+            if not text or len(text) < 5:
+                return None
+            
+            # 選択肢（A, B, C, D）複数のセレクタをを試す
             choices = []
-            choice_elems = element.find_all('div', class_='choice')
-            for choice_elem in choice_elems:
-                choice_text = choice_elem.get_text(strip=True)
-                choices.append(choice_text)
+            choice_selectors = [
+                ('div', 'choice'),
+                ('li', 'choice'),
+                ('div', 'sentaku'),
+                ('p', 'sentaku'),
+                ('label', 'option'),
+            ]
+            
+            for tag, cls in choice_selectors:
+                choice_elems = element.find_all(tag, class_=cls)
+                if choice_elems:
+                    choices = [ce.get_text(strip=True) for ce in choice_elems]
+                    if choices:
+                        break
+            
+            if len(choices) < 4:
+                # セレクタがない場合、汎用で探索
+                choice_elems = element.find_all(['div', 'li', 'p'])
+                choices = [ce.get_text(strip=True) for ce in choice_elems[1:5]]  # 最初の要素を除いた最初の4つ
             
             if len(choices) < 4:
                 return None
             
-            # 正答
-            correct_elem = element.find('div', class_='correct')
+            choices = choices[:4]  # 最初の4つを採用
+            
+            # 正答（複数パターンに対応）
             correct_answer = 1  # デフォルト
-            if correct_elem:
-                # 正答マーク位置から判定
-                correct_text = correct_elem.get_text(strip=True)
-                # 構造に応じて解析
+            correct_selectors = [
+                ('div', 'correct'),
+                ('span', 'seitan'),
+                ('span', 'ans'),
+                ('div', 'answer'),
+            ]
             
-            # 解説
-            explanation_elem = element.find('div', class_='explanation')
-            explanation = explanation_elem.get_text(strip=True) if explanation_elem else ""
+            for tag, cls in correct_selectors:
+                correct_elem = element.find(tag, class_=cls)
+                if correct_elem:
+                    correct_text = correct_elem.get_text(strip=True)
+                    # "1", "A", "①" などのパターンに対応
+                    if correct_text and correct_text[0] in ['1', 'A', '①']:
+                        correct_answer = 1
+                    elif correct_text and correct_text[0] in ['2', 'B', '②']:
+                        correct_answer = 2
+                    elif correct_text and correct_text[0] in ['3', 'C', '③']:
+                        correct_answer = 3
+                    elif correct_text and correct_text[0] in ['4', 'D', '④']:
+                        correct_answer = 4
+                    break
             
-            # 分野（テキストから推測または属性から取得）
+            # 解説（複数パターンに対応）
+            explanation = ""
+            explanation_selectors = [
+                ('div', 'explanation'),
+                ('div', 'kaisetsu'),
+                ('p', 'kaisetsu'),
+                ('div', 'setumei'),
+            ]
+            
+            for tag, cls in explanation_selectors:
+                explanation_elem = element.find(tag, class_=cls)
+                if explanation_elem:
+                    explanation = explanation_elem.get_text(strip=True)
+                    break
+            
+            # 分野（複数パターンに対応）
             category = "テクノロジ"  # デフォルト
-            category_elem = element.find('span', class_='category')
-            if category_elem:
-                category_text = category_elem.get_text(strip=True)
-                for cat_name, cat_code in self.CATEGORIES.items():
-                    if cat_name in category_text:
-                        category = cat_name
-                        break
+            category_selectors = [
+                ('span', 'category'),
+                ('span', 'bunya'),
+                ('div', 'category'),
+                ('p', 'category'),
+            ]
+            
+            for tag, cls in category_selectors:
+                category_elem = element.find(tag, class_=cls)
+                if category_elem:
+                    category_text = category_elem.get_text(strip=True)
+                    for cat_name, cat_code in self.CATEGORIES.items():
+                        if cat_name in category_text:
+                            category = cat_name
+                            break
+                    break
             
             return {
                 "question_number": question_number,
                 "text": text,
-                "choices": choices[:4],  # 最初の4つを採用
+                "choices": choices,
                 "correct_answer": correct_answer,
                 "explanation": explanation,
                 "category": category,
