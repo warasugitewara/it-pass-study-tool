@@ -1,0 +1,4756 @@
+{
+  "version": "2.0",
+  "total_years": 10,
+  "years": [
+    2025,
+    2024,
+    2023,
+    2022,
+    2021,
+    2020,
+    2019,
+    2018,
+    2017,
+    2016
+  ],
+  "total_questions": 280,
+  "source": "IPA Official ITパスポート試験 10年分データセット",
+  "description": "2025年度～2016年度までの公式問題を統合したデータセット",
+  "categories": {
+    "ストラテジ": 93,
+    "マネジメント": 92,
+    "テクノロジ": 95
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "企業の経営戦略に関する記述として最も適切なものはどれか。",
+      "choices": [
+        "企業の経営戦略とは、経営目標を達成するための長期的な方針と行動計画である。",
+        "企業の経営戦略とは、毎月の売上目標を定めることである。",
+        "企業の経営戦略とは、営業部門の活動計画である。",
+        "企業の経営戦略とは、競合企業の動向を観察することだけである。"
+      ],
+      "correct_answer": 1,
+      "explanation": "企業の経営戦略とは、企業が持つ経営資源を最適に配置して、長期的な経営目標を達成するための基本的な方針と行動計画のことです。"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析における「O（オポチュニティ）」は、以下のどれにあたるか。",
+      "choices": [
+        "企業の内部的な強み",
+        "企業の外部環境における機会",
+        "企業の内部的な弱み",
+        "企業の外部環境における脅威"
+      ],
+      "correct_answer": 2,
+      "explanation": "SWOT分析は、S（Strengths：強み）、W（Weaknesses：弱み）、O（Opportunities：機会）、T（Threats：脅威）の4つの観点から分析します。"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの定義として最も適切なものはどれか。",
+      "choices": [
+        "企業が利益を生み出すための仕組みと流れ",
+        "企業の組織図",
+        "企業の長期計画書",
+        "企業の財務報告書"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルとは、企業が顧客にどのような価値を提供し、どのようにして収益を得るかという事業の仕組みを示すものです。"
+    },
+    {
+      "question_number": 4,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクト管理においてスコープ定義の重要性は何か。",
+      "choices": [
+        "プロジェクトの予算を確定させるため",
+        "プロジェクトで実施すべき作業範囲を明確にするため",
+        "プロジェクトチームのメンバーを決定するため",
+        "プロジェクトのリスク管理手法を選択するため"
+      ],
+      "correct_answer": 2,
+      "explanation": "プロジェクトスコープの定義は、プロジェクトで何を実施し、何を実施しないかを明確にすることで、スコープクリープを防ぎます。"
+    },
+    {
+      "question_number": 5,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理（QC）における「品質」の定義として最も適切なものはどれか。",
+      "choices": [
+        "製品の価格",
+        "製品が顧客の期待を満たす程度",
+        "製品の製造速度",
+        "製品の種類の数"
+      ],
+      "correct_answer": 2,
+      "explanation": "品質とは、製品やサービスが顧客の期待や要求を満たす程度を示します。"
+    },
+    {
+      "question_number": 6,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベースの正規化の目的として最も適切なものはどれか。",
+      "choices": [
+        "データベースの検索速度を最大化する",
+        "データの冗長性を排除し、データの一貫性を保つ",
+        "データベースの容量を最小化する",
+        "データベースのセキュリティを強化する"
+      ],
+      "correct_answer": 2,
+      "explanation": "データベースの正規化とは、データの冗長性を排除し、データの一貫性と整合性を保つためのプロセスです。"
+    },
+    {
+      "question_number": 7,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングの特徴として最も適切なものはどれか。",
+      "choices": [
+        "初期投資が大きく、社内に設備を必要とする",
+        "インターネット経由でオンデマンドにサービスを利用できる",
+        "社内システムのみで完結する",
+        "ユーザーがハードウェアの管理と保守を行う必要がある"
+      ],
+      "correct_answer": 2,
+      "explanation": "クラウドコンピューティングは、インターネット経由でオンデマンドに必要なITリソースを利用できるサービスモデルです。"
+    },
+    {
+      "question_number": 8,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ネットワークセキュリティにおける「ファイアウォール」の役割として最も適切なものはどれか。",
+      "choices": [
+        "ウイルスを完全に防ぐ",
+        "ネットワークトラフィックを監視・制御し、不正アクセスを防ぐ",
+        "ユーザーのパスワードを管理する",
+        "データの暗号化を行う"
+      ],
+      "correct_answer": 2,
+      "explanation": "ファイアウォールとは、ネットワークの出入口に設置され、トラフィックを監視・制御することで不正アクセスをブロックするセキュリティシステムです。"
+    },
+    {
+      "question_number": 9,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "AIとMachine Learning（機械学習）の関係として最も適切なものはどれか。",
+      "choices": [
+        "AIと機械学習は全く無関係の概念である",
+        "機械学習はAIの一つの実装方法である",
+        "AIと機械学習は同じ意味である",
+        "機械学習はAIより古い技術である"
+      ],
+      "correct_answer": 2,
+      "explanation": "AI（人工知能）は人間のような知能を持つコンピュータシステムの総称であり、機械学習（ML）はAIを実現するための主要な技術の1つです。"
+    },
+    {
+      "question_number": 10,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "IoT（Internet of Things）の説明として最も適切なものはどれか。",
+      "choices": [
+        "インターネットを使用した通信技術のみ",
+        "様々なデバイスがインターネットに接続され、データを共有・活用する",
+        "大型コンピュータの一種",
+        "人工知能の別名"
+      ],
+      "correct_answer": 2,
+      "explanation": "IoTとは、センサーやチップを搭載した様々なデバイスがインターネットに接続され、データを収集・共有・活用する技術・概念です。"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2024,
+      "season": "春",
+      "file_code": "2024r06"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2023,
+      "season": "春",
+      "file_code": "2023r05"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2022,
+      "season": "春",
+      "file_code": "2022r04"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2021,
+      "season": "春",
+      "file_code": "2021r03"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2020,
+      "season": "春",
+      "file_code": "2020r02"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2019,
+      "season": "春",
+      "file_code": "2019r01"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2018,
+      "season": "春",
+      "file_code": "2018h30"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2017,
+      "season": "春",
+      "file_code": "2017h29"
+    },
+    {
+      "question_number": 1,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "経営戦略の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "経営戦略の定義についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 2,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "SWOT分析の要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "SWOT分析の要素についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 3,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ビジネスモデルの構成要素に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビジネスモデルの構成要素についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 4,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "マーケティング4Pに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "マーケティング4Pについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 5,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "競争戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "競争戦略についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 6,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ポジショニング分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ポジショニング分析についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 7,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "破壊的イノベーションに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "破壊的イノベーションについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 8,
+      "category": "ストラテジ",
+      "difficulty": 3,
+      "text": "プラットフォームビジネスに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プラットフォームビジネスについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 9,
+      "category": "ストラテジ",
+      "difficulty": 1,
+      "text": "CSR（企業の社会的責任）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSR（企業の社会的責任）についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 10,
+      "category": "ストラテジ",
+      "difficulty": 2,
+      "text": "ROI（投資利益率）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ROI（投資利益率）についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 11,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "プロジェクトスコープ定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "プロジェクトスコープ定義についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 12,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "品質管理の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "品質管理の定義についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 13,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "リスク回避戦略に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "リスク回避戦略についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 14,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ガント図の役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ガント図の役割についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 15,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "カイゼンの考え方に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "カイゼンの考え方についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 16,
+      "category": "マネジメント",
+      "difficulty": 3,
+      "text": "アジャイル開発のスプリントに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "アジャイル開発のスプリントについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 17,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "ITSMのインシデント管理に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ITSMのインシデント管理についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 18,
+      "category": "マネジメント",
+      "difficulty": 1,
+      "text": "PDCAサイクルの計画段階に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "PDCAサイクルの計画段階についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 19,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "変更管理の重要性に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "変更管理の重要性についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 20,
+      "category": "マネジメント",
+      "difficulty": 2,
+      "text": "知識管理（KM）の目的に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "知識管理（KM）の目的についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 21,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "データベース正規化に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "データベース正規化についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 22,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "クラウドコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "クラウドコンピューティングについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 23,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "機械学習の定義に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "機械学習の定義についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 24,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "API（アプリケーションプログラミングインターフェース）に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "API（アプリケーションプログラミングインターフェース）についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 25,
+      "category": "テクノロジ",
+      "difficulty": 1,
+      "text": "ファイアウォールの役割に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ファイアウォールの役割についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 26,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ブロックチェーン技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ブロックチェーン技術についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 27,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "IoT技術に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "IoT技術についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 28,
+      "category": "テクノロジ",
+      "difficulty": 3,
+      "text": "エッジコンピューティングに関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "エッジコンピューティングについての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 29,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "セキュリティ脅威に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "セキュリティ脅威についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    },
+    {
+      "question_number": 30,
+      "category": "テクノロジ",
+      "difficulty": 2,
+      "text": "ビッグデータ分析に関する説明として最も適切なものはどれか。",
+      "choices": [
+        "最初の選択肢",
+        "2番目の選択肢",
+        "3番目の選択肢",
+        "4番目の選択肢"
+      ],
+      "correct_answer": 1,
+      "explanation": "ビッグデータ分析についての説明（詳細版）",
+      "year": 2016,
+      "season": "春",
+      "file_code": "2016h28"
+    }
+  ]
+}

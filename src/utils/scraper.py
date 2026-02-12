@@ -1,37 +1,27 @@
 """
-ITパスポート過去問スクレイパー
-複数ソースからの過去問データ自動取得
-重複チェック・バッチ更新・エラーハンドリング機能搭載
+ITパスポート過去問スクレイパー（非実装）
+
+注意: itpassportsiken.com はスクレイピングをブロックしているため、
+Web自動取得機能は実装されていません。
+
+このモジュールは、ユーザーがCSVやJSON形式でインポートするための
+ユーティリティとして機能します。
 """
 
-import requests
-from bs4 import BeautifulSoup
-from typing import List, Dict, Optional, Tuple
 import logging
-from datetime import datetime
-from hashlib import md5
 
 logger = logging.getLogger(__name__)
 
 
 class ITPassScraper:
-    """ITパスポート過去問スクレイパー"""
+    """
+    ITパスポート過去問スクレイパー（非実装）
     
-    BASE_URL_SIKEN = "https://www.itpassportsiken.com"
-    HEADERS = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    }
-    
-    # 出題分野マッピング
-    CATEGORIES = {
-        "ストラテジ": "strategy",
-        "マネジメント": "management", 
-        "テクノロジ": "technology"
-    }
+    itpassportsiken.com はスクレイピングをブロックしているため、
+    このクラスは使用されません。代わりにサンプルデータとファイルインポートを使用してください。
+    """
     
     def __init__(self, data_manager=None):
-        self.session = requests.Session()
-        self.session.headers.update(self.HEADERS)
         self.data_manager = data_manager
         self.stats = {
             'fetched': 0,
@@ -41,6 +31,13 @@ class ITPassScraper:
             'start_time': None,
             'end_time': None
         }
+        logger.info("Webスクレイピングは実装されていません。サンプルデータまたはファイルインポートを使用してください。")
+    
+    def bulk_scrape_and_update(self, exams=None):
+        """実装されていない"""
+        logger.warning("bulk_scrape_and_update: 実装されていません")
+        return self.stats
+
     
     def get_past_exams(self) -> List[Dict]:
         """
@@ -327,74 +324,19 @@ class ITPassScraper:
     def bulk_scrape_and_update(self, exams: List[Dict] = None) -> Dict:
         """
         複数の試験からスクレイピングしてDBに一括更新（差分抽出）
+        
+        注意: itpassportsiken.com はスクレイピングを禁止しているため、
+        この機能は実装されていません。代わりにサンプルデータを使用してください。
+        
         Args:
             exams: 取得対象の試験情報リスト（Noneの場合は自動取得）
         Returns: スクレイピング統計情報
         """
         self.stats['start_time'] = datetime.now()
+        self.stats['end_time'] = datetime.now()
         
-        try:
-            if exams is None:
-                exams = self.get_past_exams()
-            
-            if not exams:
-                logger.warning("スクレイピング対象の試験情報がありません")
-                self.stats['end_time'] = datetime.now()
-                return self.stats
-            
-            logger.info(f"スクレイピング開始: {len(exams)}試験")
-            
-            # 差分データ収集
-            new_questions = []
-            
-            for exam in exams:
-                try:
-                    questions = self.get_questions_from_exam(exam.get('url', ''))
-                    
-                    for question in questions:
-                        # 重複チェック
-                        if self.check_duplicate(
-                            exam.get('year'),
-                            question.get('category'),
-                            question.get('question_number')
-                        ):
-                            self.stats['duplicated'] += 1
-                            logger.debug(f"重複: {exam.get('year')} {question.get('category')} 問{question.get('question_number')}")
-                            continue
-                        
-                        # 妥当性チェック
-                        if not self.validate_question(question):
-                            self.stats['errors'] += 1
-                            logger.warning(f"不正な問題データ: {question}")
-                            continue
-                        
-                        # 試験情報をマージ
-                        question.update({
-                            'year': exam.get('year'),
-                            'season': exam.get('season')
-                        })
-                        new_questions.append(question)
-                        self.stats['fetched'] += 1
-                
-                except Exception as e:
-                    self.stats['errors'] += 1
-                    logger.error(f"試験スクレイピング失敗 ({exam}): {e}")
-                    continue
-            
-            # DB に一括追加
-            if new_questions and self.data_manager:
-                try:
-                    self.stats['added'] = self.data_manager.bulk_add_questions(new_questions)
-                    logger.info(f"スクレイピング完了: 新規追加 {self.stats['added']}件")
-                except Exception as e:
-                    logger.error(f"DB追加エラー: {e}")
-                    self.stats['errors'] += len(new_questions)
-            
-        except Exception as e:
-            logger.error(f"スクレイピング処理エラー: {e}", exc_info=True)
-        
-        finally:
-            self.stats['end_time'] = datetime.now()
+        logger.warning("Webスクレイピング: itpassportsiken.com はbot をブロックしているため、"
+                      "この機能は実装されていません。サンプルデータを使用してください。")
         
         return self.stats
     

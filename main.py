@@ -15,7 +15,7 @@ from src.ui.main_window import MainWindow
 from src.utils.data_manager import get_data_manager
 
 # バージョン情報
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 def get_version() -> str:
     """アプリケーションバージョンを取得"""
@@ -31,12 +31,12 @@ def get_version() -> str:
 
 
 def get_sample_data_path() -> Path:
-    """サンプルデータのパスを取得"""
+    """サンプルデータのパスを取得 - 10年分統合データ"""
     if getattr(sys, 'frozen', False):
         base_dir = Path(sys.executable).parent
-        return base_dir / "resources" / "sample_data" / "sample_questions_2024_spring.json"
+        return base_dir / "resources" / "sample_data" / "all_questions_10years.json"
     else:
-        return Path(__file__).parent / "resources" / "sample_data" / "sample_questions_2024_spring.json"
+        return Path(__file__).parent / "resources" / "sample_data" / "all_questions_10years.json"
 
 
 def load_sample_data():

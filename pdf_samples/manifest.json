@@ -1,0 +1,163 @@
+{
+  "download_date": "2026-02-12 23:52:49",
+  "total_files": 20,
+  "total_size_mb": 60.44385814666748,
+  "years_covered": [
+    2025,
+    2024,
+    2023,
+    2022,
+    2021,
+    2020,
+    2019,
+    2018,
+    2017,
+    2016
+  ],
+  "files": {
+    "questions": [
+      {
+        "year": 2025,
+        "year_text": "令和7年度",
+        "file_code": "2025r07",
+        "path": "pdf_samples\\2025r07_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2024,
+        "year_text": "令和6年度",
+        "file_code": "2024r06",
+        "path": "pdf_samples\\2024r06_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2023,
+        "year_text": "令和5年度",
+        "file_code": "2023r05",
+        "path": "pdf_samples\\2023r05_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2022,
+        "year_text": "令和4年度",
+        "file_code": "2022r04",
+        "path": "pdf_samples\\2022r04_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2021,
+        "year_text": "令和3年度",
+        "file_code": "2021r03",
+        "path": "pdf_samples\\2021r03_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2020,
+        "year_text": "令和2年度",
+        "file_code": "2020r02o",
+        "path": "pdf_samples\\2020r02o_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2019,
+        "year_text": "令和元年度",
+        "file_code": "2019r01a",
+        "path": "pdf_samples\\2019r01a_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2018,
+        "year_text": "平成30年度",
+        "file_code": "2018h30a",
+        "path": "pdf_samples\\2018h30a_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2017,
+        "year_text": "平成29年度",
+        "file_code": "2017h29a",
+        "path": "pdf_samples\\2017h29a_ip_qs.pdf",
+        "type": "questions"
+      },
+      {
+        "year": 2016,
+        "year_text": "平成28年度",
+        "file_code": "2016h28a",
+        "path": "pdf_samples\\2016h28a_ip_qs.pdf",
+        "type": "questions"
+      }
+    ],
+    "answers": [
+      {
+        "year": 2025,
+        "year_text": "令和7年度",
+        "file_code": "2025r07",
+        "path": "pdf_samples\\2025r07_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2024,
+        "year_text": "令和6年度",
+        "file_code": "2024r06",
+        "path": "pdf_samples\\2024r06_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2023,
+        "year_text": "令和5年度",
+        "file_code": "2023r05",
+        "path": "pdf_samples\\2023r05_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2022,
+        "year_text": "令和4年度",
+        "file_code": "2022r04",
+        "path": "pdf_samples\\2022r04_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2021,
+        "year_text": "令和3年度",
+        "file_code": "2021r03",
+        "path": "pdf_samples\\2021r03_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2020,
+        "year_text": "令和2年度",
+        "file_code": "2020r02o",
+        "path": "pdf_samples\\2020r02o_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2019,
+        "year_text": "令和元年度",
+        "file_code": "2019r01a",
+        "path": "pdf_samples\\2019r01a_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2018,
+        "year_text": "平成30年度",
+        "file_code": "2018h30a",
+        "path": "pdf_samples\\2018h30a_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2017,
+        "year_text": "平成29年度",
+        "file_code": "2017h29a",
+        "path": "pdf_samples\\2017h29a_ip_ans.pdf",
+        "type": "answers"
+      },
+      {
+        "year": 2016,
+        "year_text": "平成28年度",
+        "file_code": "2016h28a",
+        "path": "pdf_samples\\2016h28a_ip_ans.pdf",
+        "type": "answers"
+      }
+    ]
+  }
+}

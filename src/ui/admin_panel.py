@@ -124,24 +124,21 @@ class AdminPanel(QWidget):
         
         # 説明
         desc = QLabel(
-            "以下の形式でデータをインポートできます:\n"
-            "• CSV ファイル\n"
-            "• JSON ファイル\n"
-            "• Excel ファイル\n"
-            "• Webスクレイピング"
+            "⚠️  注意: itpassportsiken.com はスクレイピングをブロックしているため、\n"
+            "Web自動取得機能は実装されていません。\n\n"
+            "以下の方法でデータを追加できます:\n"
+            "• サンプルデータ（10問）をロード\n"
+            "• CSV ファイルをインポート\n"
+            "• JSON ファイルをインポート\n"
+            "• Excel ファイルをインポート"
         )
         desc.setStyleSheet(f"color: {COLOR_TEXT_SECONDARY};")
         layout.addWidget(desc)
         
         layout.addSpacing(15)
         
-        # スクレイピングボタン
-        btn_scrape = QPushButton("🌐 Webからスクレイピング")
-        btn_scrape.clicked.connect(self._scrape_from_web)
-        layout.addWidget(btn_scrape)
-        
         # サンプルデータロードボタン
-        btn_sample = QPushButton("📦 サンプルデータをロード")
+        btn_sample = QPushButton("📦 サンプルデータをロード (10問)")
         btn_sample.clicked.connect(self._load_sample_data)
         layout.addWidget(btn_sample)
         
@@ -800,125 +797,59 @@ class AdminPanel(QWidget):
             QMessageBox.critical(self, "エラー", f"時刻変更エラー: {e}")
             logger.error(f"時刻変更エラー: {e}")
     
-    def _scrape_from_web(self):
-        """Webからスクレイピング実行またはフォールバックデータをロード"""
-        try:
-            reply = QMessageBox.question(
-                self,
-                "確認",
-                "WebからITパスポート過去問をスクレイピングします。\n\n"
-                "注意: サイトの構造が変わっている場合、自動フォールバック用の\n"
-                "サンプルデータが代わりにロードされます。\n\n"
-                "ネットワーク接続を確認してから実行してください。",
-                QMessageBox.Yes | QMessageBox.No
-            )
-            
-            if reply != QMessageBox.Yes:
-                return
-            
-            self.status_label.setText("スクレイピング実行中...")
-            self._add_log("⏳ Webからスクレイピングを開始します...")
-            
-            from src.utils.scraper import ITPassScraper
-            
-            scraper = ITPassScraper(self.data_manager)
-            stats = scraper.bulk_scrape_and_update()
-            
-            self._add_log(f"✅ スクレイピング結果:")
-            self._add_log(f"   取得件数: {stats['fetched']}")
-            self._add_log(f"   追加件数: {stats['added']}")
-            self._add_log(f"   重複: {stats['duplicated']}")
-            self._add_log(f"   エラー: {stats['errors']}")
-            
-            self.status_label.setText(f"最終更新: {stats['end_time'].strftime('%Y-%m-%d %H:%M:%S')}")
-            
-            if stats['added'] > 0:
-                QMessageBox.information(
-                    self,
-                    "成功",
-                    f"{stats['added']}件の新しい問題をデータベースに追加しました。"
-                )
-                self._load_initial_data()
-                self._apply_filters()
-            elif stats['fetched'] > 0:
-                QMessageBox.information(
-                    self,
-                    "完了",
-                    f"{stats['fetched']}件の問題を取得しましたが、重複のため追加されませんでした。"
-                )
-            else:
-                # フォールバック: サンプルデータをロード
-                self._add_log("⚠️  Webスクレイピングに失敗。フォールバックデータをロードします...")
-                fallback_added = self._load_fallback_sample_data()
-                
-                if fallback_added > 0:
-                    QMessageBox.information(
-                        self,
-                        "フォールバック",
-                        f"Webからのデータ取得に失敗しました。\n\n"
-                        f"代わりに {fallback_added} 件のサンプルデータ（2024年秋）を\n"
-                        f"ロードしました。\n\n"
-                        f"サイト構造が変わっている可能性があります。\n"
-                        f"詳細は GitHub Issues で報告してください。"
-                    )
-                    self._load_initial_data()
-                    self._apply_filters()
-                else:
-                    QMessageBox.warning(
-                        self,
-                        "警告",
-                        "問題を取得できませんでした。\nサイトの構造が変わっている可能性があります。\n"
-                        "GitHub Issues でご報告ください。"
-                    )
-        
-        except ImportError:
-            QMessageBox.warning(
-                self,
-                "ライブラリが見つかりません",
-                "beautifulsoup4やrequestsライブラリが必要です。\n"
-                "pip install beautifulsoup4 requests を実行してください。"
-            )
-        except Exception as e:
-            QMessageBox.critical(self, "エラー", f"スクレイピング中にエラーが発生しました:\n{str(e)}")
-            self._add_log(f"❌ エラー: {str(e)}")
-            self.status_label.setText("エラー: スクレイピング失敗")
-    
     def _load_sample_data(self):
-        """サンプルデータをロード"""
+        """サンプルデータをロード（春 + 秋 の10問）"""
         try:
+            # どのサンプルデータをロードするか選択
             reply = QMessageBox.question(
                 self,
                 "確認",
-                "サンプルデータ (2024年春 5問) をデータベースにロードしますか?\n\n"
-                "既に同じデータがある場合は重複として扱われます。",
-                QMessageBox.Yes | QMessageBox.No
+                "ロードするサンプルデータを選択してください:\n\n"
+                "Yes: 両方ロード (春 5問 + 秋 5問 = 合計 10問)\n"
+                "No: 追加データのみロード (秋 5問)",
+                QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel
             )
             
-            if reply != QMessageBox.Yes:
-                return
-            
-            sample_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_spring.json"
-            
-            if not sample_file.exists():
-                QMessageBox.warning(self, "エラー", f"サンプルデータが見つかりません:\n{sample_file}")
+            if reply == QMessageBox.Cancel:
                 return
             
             self.status_label.setText("サンプルデータをロード中...")
             self._add_log("⏳ サンプルデータをロードしています...")
             
-            with open(sample_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+            total_added = 0
             
-            questions = data.get('questions', [])
-            count = self.data_manager.bulk_add_questions(questions)
+            # 春データをロード（Yes の場合と初回両方）
+            if reply == QMessageBox.Yes:
+                spring_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_spring.json"
+                if spring_file.exists():
+                    with open(spring_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    questions = data.get('questions', [])
+                    count = self.data_manager.bulk_add_questions(questions)
+                    total_added += count
+                    self._add_log(f"✅ 2024年春: {count}件追加")
+            
+            # 秋データをロード
+            autumn_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_autumn.json"
+            if autumn_file.exists():
+                with open(autumn_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                questions = data.get('questions', [])
+                count = self.data_manager.bulk_add_questions(questions)
+                total_added += count
+                self._add_log(f"✅ 2024年秋: {count}件追加")
             
             self.status_label.setText(f"最終更新: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            self._add_log(f"✅ サンプルデータをロードしました: {count}件追加")
+            self._add_log(f"✅ サンプルデータロード完了: 合計 {total_added}件")
             
             QMessageBox.information(
                 self,
                 "成功",
-                f"{count}/{len(questions)}件のサンプル問題を追加しました。"
+                f"{total_added}件のサンプル問題をデータベースに追加しました。\n\n"
+                "💡 より多くの問題が必要な場合:\n"
+                "  • CSVやJSONファイルをインポート\n"
+                "  • 公式サイトから問題を取得:\n"
+                "    https://www.itpassportsiken.com/kakomon/"
             )
             
             self._load_initial_data()
@@ -928,28 +859,7 @@ class AdminPanel(QWidget):
             QMessageBox.critical(self, "エラー", f"サンプルデータロード中にエラーが発生しました:\n{str(e)}")
             self._add_log(f"❌ エラー: {str(e)}")
             self.status_label.setText("エラー: ロード失敗")
-    
-    def _load_fallback_sample_data(self) -> int:
-        """フォールバック用サンプルデータをロード（秋データ）"""
-        try:
-            fallback_file = Path(__file__).parent.parent.parent / "resources" / "sample_data" / "sample_questions_2024_autumn.json"
-            
-            if not fallback_file.exists():
-                self._add_log("⚠️  フォールバックデータも見つかりません")
-                return 0
-            
-            with open(fallback_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            questions = data.get('questions', [])
-            count = self.data_manager.bulk_add_questions(questions)
-            
-            self._add_log(f"✅ フォールバックデータ: {count}件追加")
-            return count
-        
-        except Exception as e:
-            self._add_log(f"❌ フォールバック失敗: {str(e)}")
-            return 0
+
 
 
 

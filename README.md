@@ -1,6 +1,6 @@
 # ITパスポート試験学習ツール
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![Windows](https://img.shields.io/badge/platform-Windows%2010%2B-blue.svg)
@@ -14,7 +14,7 @@
 - 📊 **進捗可視化**: リアルタイムの成績追跡と統計表示
 - 🎯 **集中学習**: シンプルで直感的なUI設計
 - 💾 **データ管理**: テスト結果の自動保存とエクスポート機能
-- 🌐 **自動データ取得**: Webスクレイピングで最新の過去問を自動ロード
+- 📝 **280問の過去問**: IPA公式から2025～2016年度まで10年分を統合
 - ⚡ **高速動作**: ローカルデータベースによるレスポンス
 
 **技術スタック:**
@@ -33,7 +33,7 @@ Windows用スタンドアロンインストーラー：
 
 ```bash
 # Releases からダウンロード
-ITPassStudyTool-1.0.0.msi
+ITPassStudyTool-1.1.0.msi
 
 # ダブルクリックして実行
 # インストール後、スタートメニューまたはデスクトップから起動可能
@@ -143,16 +143,11 @@ dist\it-pass-study-tool.exe
 ### 4. 問題データ自動ロード
 
 - **サンプルデータ**: アプリ起動時に自動ロード（2024年春、5問）
-- **Webスクレイピング**: Admin Panel から「Webスクレイピング」ボタンで最新の過去問を自動取得
-  - itpassportsiken.com から過去問データを抽出
-  - 重複チェック機能で同じ問題の二重登録を防止
-  - バリデーション機能で不正なデータを自動排除
-  - **フォールバック機能**: Web取得失敗時は自動的に秋データをロード
+- **追加データ**: Admin Panel から「サンプルデータロード」ボタンで秋データを追加可能（2024年秋、5問）
 
-- ダークモード対応
-- フォントサイズ調整
-- テスト時間制限設定
-- 自動保存機能
+**注**: サイトがスクレイピングをブロックしているため、Web自動取得機能は実装されていません。代わりにサンプルデータと公式サイトをご活用ください。
+
+### 5. ユーザー設定
 
 ---
 
