@@ -2,7 +2,7 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Package Name="ITパスポート試験学習ツール"
            Language="1041"
-           Version="1.0.0.0"
+           Version="1.1.0.0"
            Manufacturer="ITPassStudyTool"
            UpgradeCode="5A8B4C2D-3E6F-4A2B-8C9D-7E1F5A3B6C9D"
            InstallerVersion="200"

@@ -9,6 +9,7 @@ Web自動取得機能は実装されていません。
 """
 
 import logging
+from typing import List, Dict
 
 logger = logging.getLogger(__name__)
 
