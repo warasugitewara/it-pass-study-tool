@@ -38,7 +38,7 @@ MARGIN_SMALL = 10
 BORDER_RADIUS = 6
 BORDER_WIDTH = 1
 
-# PySide6 スタイルシート
+# PyQt6 スタイルシート
 MAIN_STYLESHEET = f"""
 QMainWindow, QWidget {{
     background-color: {COLOR_BACKGROUND};
@@ -74,7 +74,7 @@ QPushButton:disabled {{
     color: {COLOR_TEXT_SECONDARY};
 }}
 
-QLineEdit, Qt.xtEdit, QComboBox {{
+QLineEdit, QTextEdit, QComboBox {{
     background-color: {COLOR_SURFACE};
     color: {COLOR_TEXT_PRIMARY};
     border: {BORDER_WIDTH}px solid {COLOR_BORDER};
@@ -84,7 +84,7 @@ QLineEdit, Qt.xtEdit, QComboBox {{
     selection-background-color: {COLOR_PRIMARY};
 }}
 
-QLineEdit:focus, Qt.xtEdit:focus, QComboBox:focus {{
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {{
     border: {BORDER_WIDTH}px solid {COLOR_ACCENT};
 }}
 
@@ -120,11 +120,11 @@ QGroupBox::title {{
     padding: 0 5px 0 5px;
 }}
 
-Qt.bWidget::pane {{
+QTabWidget::pane {{
     border: {BORDER_WIDTH}px solid {COLOR_BORDER};
 }}
 
-Qt.bBar::tab {{
+QTabBar::tab {{
     background-color: {COLOR_SURFACE};
     color: {COLOR_TEXT_SECONDARY};
     padding: 8px 15px;
@@ -132,12 +132,12 @@ Qt.bBar::tab {{
     font-family: {FONT_FAMILY};
 }}
 
-Qt.bBar::tab:selected {{
+QTabBar::tab:selected {{
     background-color: {COLOR_PRIMARY};
     color: {COLOR_TEXT_PRIMARY};
 }}
 
-Qt.bleWidget {{
+QTableWidget {{
     background-color: {COLOR_BACKGROUND};
     alternate-background-color: {COLOR_SURFACE};
     gridline-color: {COLOR_BORDER};
@@ -145,7 +145,7 @@ Qt.bleWidget {{
     font-family: {FONT_FAMILY};
 }}
 
-Qt.bleWidget::item {{
+QTableWidget::item {{
     padding: 5px;
 }}
 
@@ -209,3 +209,5 @@ NOTIFICATION_SUCCESS = f"background-color: {COLOR_CORRECT}; color: white; paddin
 NOTIFICATION_ERROR = f"background-color: {COLOR_INCORRECT}; color: white; padding: 10px; border-radius: 5px;"
 NOTIFICATION_WARNING = f"background-color: #F59E0B; color: white; padding: 10px; border-radius: 5px;"
 NOTIFICATION_INFO = f"background-color: {COLOR_ACCENT}; color: white; padding: 10px; border-radius: 5px;"
+
+

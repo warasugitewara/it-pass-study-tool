@@ -3,12 +3,12 @@
 問題出題・回答・結果表示を担当
 """
 
-from PySide6.Qt.idgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QRadioButton,
     QButtonGroup, QProgressBar, QSpinBox, QComboBox, QMessageBox, QDialog
 )
-from PySide6.Qt.ore import Qt. Signal, Qt.mer, Qt.me
-from PySide6.Qt.ui import QFont
+from PySide6.QtCore import Qt, Signal, QTimer, QTime
+from PySide6.QtGui import QFont
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_CORRECT, COLOR_INCORRECT, COLOR_TEXT_PRIMARY,
@@ -109,7 +109,7 @@ class QuizWidget(QWidget):
     
     def _setup_timer(self):
         """タイマーセットアップ"""
-        self.timer = Qt.mer()
+        self.timer = QTimer()
         self.timer.timeout.connect(self._update_timer)
     
     def _update_timer(self):
@@ -190,12 +190,11 @@ class QuizWidget(QWidget):
             choice = question.choices[selected_id]
             self.engine.submit_answer(choice.id, 0)
         
-        # 最後の問題の場合は結果表示
-        if self.engine.get_current_index() >= self.engine.get_question_count() - 1:
+        # 次の問題へ
+        if self.engine.get_current_index() == self.engine.get_question_count() - 1:
             self._show_results()
             return
         
-        # 次の問題へ
         self.engine.next_question()
         self._display_question()
     
@@ -210,11 +209,23 @@ class QuizWidget(QWidget):
         
         results = self.engine.finish_session()
         
-        if results and self.parentWidget() and hasattr(self.parentWidget().parentWidget(), 'show_results'):
-            # メインウィンドウの show_results メソッドを呼び出す
-            self.parentWidget().parentWidget().show_results(results)
-        else:
-            self.back_requested.emit()
+        if results:
+            correct_rate = results.get('correct_rate', 0)
+            message = (
+                f"クイズ完了！\n\n"
+                f"正答数: {results.get('correct_count')}/{results.get('total_questions')}問\n"
+                f"正答率: {correct_rate:.1f}%\n"
+                f"学習時間: {results.get('elapsed_time', 0)}秒"
+            )
+            
+            if correct_rate >= 70:
+                QMessageBox.information(self, "✓ 良好です！", message)
+            elif correct_rate >= 50:
+                QMessageBox.information(self, "👍 お疲れ様でした", message)
+            else:
+                QMessageBox.information(self, "📚 もう一度チャレンジ", message)
+        
+        self.back_requested.emit()
     
     def _confirm_back(self):
         """戻る確認"""
@@ -227,3 +238,5 @@ class QuizWidget(QWidget):
         if reply == QMessageBox.StandardButton.Yes:
             self.timer.stop()
             self.back_requested.emit()
+
+

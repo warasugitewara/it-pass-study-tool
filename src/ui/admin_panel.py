@@ -2,13 +2,13 @@
 管理パネル - 問題管理・データインポート
 """
 
-from PySide6.Qt.idgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, Qt.bWidget,
-    Qt.bleWidget, Qt.bleWidgetItem, QFileDialog, QMessageBox, QSpinBox,
-    QComboBox, QLineEdit, Qt.xtEdit, QFormLayout, QGroupBox
+from PySide6.QtWidgets import (
+    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QTabWidget,
+    QTableWidget, QTableWidgetItem, QFileDialog, QMessageBox, QSpinBox,
+    QComboBox, QLineEdit, QTextEdit, QFormLayout, QGroupBox
 )
-from PySide6.Qt.ore import Qt. Signal
-from PySide6.Qt.ui import QFont
+from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QFont
 
 from src.ui.styles import (
     COLOR_PRIMARY, COLOR_TEXT_PRIMARY, COLOR_TEXT_SECONDARY, PADDING_MEDIUM
@@ -37,7 +37,7 @@ class AdminPanel(QWidget):
         layout.addWidget(header)
         
         # タブウィジェット
-        tabs = Qt.bWidget()
+        tabs = QTabWidget()
         tabs.setStyleSheet(f"color: {COLOR_TEXT_PRIMARY};")
         
         # タブ1: データインポート
@@ -105,7 +105,7 @@ class AdminPanel(QWidget):
         # サンプルフォーマット
         group = QGroupBox("CSVフォーマット例")
         group_layout = QVBoxLayout()
-        sample = Qt.xtEdit()
+        sample = QTextEdit()
         sample.setReadOnly(True)
         sample.setText(
             "year,season,category,question_number,text,choice_a,choice_b,choice_c,choice_d,correct_answer\n"
@@ -144,7 +144,7 @@ class AdminPanel(QWidget):
         layout.addLayout(filter_layout)
         
         # 問題テーブル
-        table = Qt.bleWidget()
+        table = QTableWidget()
         table.setColumnCount(6)
         table.setHorizontalHeaderLabels([
             "問題番号", "年度", "分野", "問題文 (最初50字)", "難易度", "操作"
@@ -274,3 +274,5 @@ class AdminPanel(QWidget):
     def _edit_question(self):
         """問題編集"""
         QMessageBox.information(self, "問題編集", "問題編集ダイアログ\n実装予定")
+
+

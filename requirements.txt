@@ -1,6 +1,6 @@
 # Core GUI Framework
 PySide6==6.6.1
-# PyQt6==6.6.1  # 互換性の問題のため PySide6 に変更
+# PySide6==6.6.1
 
 # Database & ORM
 SQLAlchemy==2.0.23

@@ -244,3 +244,4 @@ class ResultsWidget(QWidget):
             return f"{minutes}分 {secs}秒"
         else:
             return f"{secs}秒"
+
